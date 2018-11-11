@@ -24,7 +24,7 @@
 #include "win32fix.h"
 #include "mathtypes.h"
 
-#define MODIFICATIONS_STRING "Modified by tyabus"
+#define MODIFICATIONS_STRING "Modified by tyabus\n"
 
 #ifdef _DEBUG
 #define ZHLT_VERSIONSTRING "v3.4 dbg"
