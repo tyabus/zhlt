@@ -21,9 +21,10 @@ hlvis_:
 hlrad_:
 	mkdir -p $(EXEDIR)
 	$(CXX) $(INCLUDES) $(CXXFLAGS) -o build/hlrad common/blockmem.cpp common/bspfile.cpp common/cmdlib.cpp common/filelib.cpp common/files.cpp common/log.cpp common/mathlib.cpp common/messages.cpp common/resourcelock.cpp common/scriplib.cpp common/threads.cpp common/winding.cpp hlrad/lerp.cpp hlrad/lightmap.cpp hlrad/mathutil.cpp hlrad/nomatrix.cpp hlrad/qrad.cpp hlrad/qradutil.cpp hlrad/sparse.cpp hlrad/trace.cpp hlrad/transfers.cpp hlrad/transparency.cpp hlrad/vismatrix.cpp hlrad/vismatrixutil.cpp
+
 ripent_:
 	mkdir -p $(EXEDIR)
 	$(CXX) $(INCLUDES) $(CXXFLAGS) -o build/ripent ripent/ripent.cpp common/blockmem.cpp common/bspfile.cpp common/cmdlib.cpp common/filelib.cpp common/log.cpp common/messages.cpp common/scriplib.cpp common/mathlib.cpp
 
 clean:
-	rm -rf build
+	rm -rf $(EXEDIR)
