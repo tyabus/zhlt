@@ -10,20 +10,20 @@
 #define MAX_MAP_HULLS            4
 // hard limit
 
-#define MAX_MAP_MODELS         400
+#define MAX_MAP_MODELS           1024 // 400 was default
 // variable, but 400 brush entities is very stressful on the engine and network code as it is
 
-#define MAX_MAP_BRUSHES       32768
+#define MAX_MAP_BRUSHES       	 32768
 // arbitrary, but large numbers of brushes generally require more lightmap's than the compiler can handle
 
-#define MAX_ENGINE_ENTITIES   1024
-#define MAX_MAP_ENTITIES      2048
+#define MAX_ENGINE_ENTITIES   	 1024 // unknown
+#define MAX_MAP_ENTITIES      	 8192 // 2048 was default
 // hard limit, in actuallity it is too much, as temporary entities in the game plus static map entities can overflow
 
 #define MAX_MAP_ENTSTRING   (512*1024)
 // abitrary, 512Kb of string data should be plenty even with TFC FGD's
 
-#define MAX_MAP_PLANES      32768
+#define MAX_MAP_PLANES          32768
 #define MAX_INTERNAL_MAP_PLANES (256*1024)
 // (from email): I have been building a rather complicated map, and using your latest 
 // tools (1.61) it seemed to compile fine.  However, in game, the engine was dropping
@@ -37,7 +37,7 @@
 #define MAX_MAP_CLIPNODES    32767
 // hard limit (negative short's are used as contents values)
 
-#define MAX_MAP_LEAFS         8192
+#define MAX_MAP_LEAFS        32767 // 8192 was default
 // hard limit (halflife depends on it to setup pvs bits correctly)
 
 #define MAX_MAP_VERTS        65535
@@ -45,14 +45,14 @@
 #define MAX_MAP_MARKSURFACES 65535
 // hard limit (data structures store them as unsigned shorts)
 
-#define MAX_MAP_TEXTURES       512
+#define MAX_MAP_TEXTURES      2048 // 512 was default
 // hard limit (halflife limitation)
 
-#define MAX_MAP_TEXINFO      32767
+#define MAX_MAP_TEXINFO       MAX_MAP_FACES // 32767 was default
 // hard limit (face.texinfo is signed short)
 
-#define MAX_MAP_EDGES       256000
-#define MAX_MAP_SURFEDGES   512000
+#define MAX_MAP_EDGES         256000
+#define MAX_MAP_SURFEDGES     512000
 // arbtirary
 
 #define DEFAULT_MAX_MAP_MIPTEX      0x400000
@@ -62,7 +62,7 @@
 #define DEFAULT_MAX_MAP_LIGHTDATA	0x600000
 // arbitrary
 
-#define MAX_MAP_VISIBILITY  0x200000
+#define MAX_MAP_VISIBILITY  		0x800000 // default was 0x200000
 // arbitrary
 
 // these are for entity key:value pairs
