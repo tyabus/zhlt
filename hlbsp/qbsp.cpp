@@ -858,7 +858,7 @@ void            ProcessModel(int modelnum)
     VectorCopy(surfs->maxs, model->maxs);
 
     // SolidBSP generates a node tree
-    nodes = SolidBSP(surfs);
+    nodes = SolidBSP(surfs,modnum==0);
 
     // build all the portals in the bsp tree
     // some portals are solid polygons, and some are paths to other leafs
@@ -890,7 +890,7 @@ void            ProcessModel(int modelnum)
     for (g_hullnum = 1; g_hullnum < NUM_HULLS; g_hullnum++)
     {
         surfs = ReadSurfs(polyfiles[g_hullnum]);
-        nodes = SolidBSP(surfs);
+        nodes = SolidBSP(surfs,modnum==0);
         if (g_nummodels == 1 && !g_nofill)                   // assume non-world bmodels are simple
         {
             nodes = FillOutside(nodes, (g_bLeaked != true), g_hullnum);
@@ -1151,7 +1151,7 @@ static void     ProcessFile(const char* const filename)
     BeginBSPFile();
 
 #ifdef HLBSP_THREADS // AJM
-    NamedRunThreadsOnIndividual(nummodels, g_estimate, ProcessModel);
+    NamedRunThreadsOnIndividual(g_nummodels, g_estimate, ProcessModel);
 #else
     // process each model individually
     while (ProcessModel())

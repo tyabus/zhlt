@@ -44,9 +44,9 @@
 #define ZHLT_NULLTEX                        // HLCSG, HLBSP
 #define ZHLT_TEXLIGHT                       // HLCSG, HLRAD - triggerable texlights by LRC
 #define ZHLT_GENERAL                        // ALL TOOLS - general changes
-#define ZHLT_NEW_FILE_FUNCTIONS				// ALL TOOLS - file path/extension extraction functions
-//#define ZHLT_DETAIL                         // HLCSG, HLBSP - detail brushes    
-//#define ZHLT_PROGRESSFILE                   // ALL TOOLS - estimate progress reporting to -progressfile
+#define ZHLT_NEW_FILE_FUNCTIONS		    // ALL TOOLS - file path/extension extraction functions
+#define ZHLT_DETAIL                         // HLCSG, HLBSP - detail brushes
+//#define ZHLT_PROGRESSFILE                 // ALL TOOLS - estimate progress reporting to -progressfile
 //#define ZHLT_NSBOB
 
 #define COMMON_HULLU // winding optimisations by hullu
@@ -59,10 +59,10 @@
 #define HLCSG_PRECISIONCLIP
 #define HLCSG_FASTFIND
 #ifdef ZHLT_NULLTEX
-	#define HLCSG_NULLIFY_INVISIBLE //requires null textures as prerequisite
+#define HLCSG_NULLIFY_INVISIBLE // requires null textures as prerequisite
 #endif
 
-//#define HLBSP_THREADS // estimate for hlbsp
+#define HLBSP_THREADS // estimate for hlbsp
 
 #define HLVIS_MAXDIST
 
@@ -80,7 +80,7 @@
 // AJM
 #pragma warning(disable: 4786)                      // identifier was truncated to '255' characters in the browser information
 #pragma warning(disable: 4305)                      // truncation from 'const double' to 'float'
-#pragma warning(disable: 4800)                     // forcing value to bool 'true' or 'false' (performance warning)
+#pragma warning(disable: 4800)                      // forcing value to bool 'true' or 'false' (performance warning)
 #endif
 
 
