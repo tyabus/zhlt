@@ -1,0 +1,9 @@
+hlbsp*
+hlcsg*
+hlvis*
+hlrad*
+ripent*
+*.o
+*.save
+*.swp
+*.bak
