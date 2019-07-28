@@ -62,7 +62,7 @@
 #define HLCSG_NULLIFY_INVISIBLE // requires null textures as prerequisite
 #endif
 
-#define HLBSP_THREADS // estimate for hlbsp
+//#define HLBSP_THREADS // estimate for hlbsp
 
 #define HLVIS_MAXDIST
 

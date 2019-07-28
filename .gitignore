@@ -3,6 +3,7 @@ hlcsg*
 hlvis*
 hlrad*
 ripent*
+bin/*
 *.o
 *.save
 *.swp
