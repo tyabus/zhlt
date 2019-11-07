@@ -2,10 +2,6 @@
 
 #include "csg.h"
 
-#ifdef HAVE_UNISTD_E
-#include <unistd.h>
-#endif
-
 void            LoadWadincludeFile(const char* const filename)
 {
     char*           fname;

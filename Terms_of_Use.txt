@@ -12,7 +12,7 @@ This document contains last-minute information about ZHLT, including questions y
 ----------
 
 I.	GENERAL TECHNICAL ISSUES
-II.	LICENCE
+II.	LICENSE
 III.	CONTACTING ME
 
 ----------
@@ -27,7 +27,7 @@ The code should work with a *nix complier that has support for Microsoft secure 
 
 ----------
 
-II. LICENCE
+II. LICENSE
 
 0) This code is protected by the GPL, a link to the GPL can be found at the end of this page.
 
