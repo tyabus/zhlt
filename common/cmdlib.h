@@ -79,8 +79,6 @@
 #pragma warning(disable: 4800)                      // forcing value to bool 'true' or 'false' (performance warning)
 #endif
 
-
-#ifdef STDC_HEADERS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -89,7 +87,6 @@
 #include <time.h>
 #include <stdarg.h>
 #include <limits.h>
-#endif
 
 #ifdef HAVE_SYS_TIME_H
 #include <sys/time.h>

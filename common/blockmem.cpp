@@ -104,9 +104,8 @@ bool            Free(void* pointer)
 /// ********* POSIX **********
 
 #ifdef SYSTEM_POSIX
-#ifdef STDC_HEADERS
 #include <stdlib.h>
-#endif
+
 #include "cmdlib.h"
 #include "messages.h"
 #include "log.h"

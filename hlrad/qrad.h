@@ -33,9 +33,7 @@
 #include <fcntl.h>
 #endif
 
-#ifdef STDC_HEADERS
 #include <ctype.h>
-#endif
 
 #ifdef SYSTEM_WIN32
 #include <direct.h>

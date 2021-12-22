@@ -7,11 +7,8 @@
 #pragma once
 #endif
 
-#ifdef STDC_HEADERS
 #include <math.h>
 #include <float.h>
-#endif
-
 #include <algorithm>
 #include <limits.h>
 
