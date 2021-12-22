@@ -4,10 +4,6 @@
 #include <malloc.h>
 #endif
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include "cmdlib.h"
 #include "messages.h"
 #include "log.h"

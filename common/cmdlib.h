@@ -9,10 +9,6 @@
 #include <io.h>
 #endif
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 // AJM: gnu compiler fix
 #ifdef __GNUC__
 #define _alloca __builtin_alloca
