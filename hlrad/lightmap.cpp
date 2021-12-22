@@ -1061,8 +1061,8 @@ void            CreateDirectLights()
             {
                 dl->stopdot2 = dl->stopdot;
             }
-            dl->stopdot2 = (float)cos(dl->stopdot2 / 180 * Q_PI);
-            dl->stopdot = (float)cos(dl->stopdot / 180 * Q_PI);
+            dl->stopdot2 = (float)cos(dl->stopdot2 / 180 * M_PI);
+            dl->stopdot = (float)cos(dl->stopdot / 180 * M_PI);
 
             if (target[0])
             {                                              // point towards target
@@ -1105,8 +1105,8 @@ void            CreateDirectLights()
                     }
 
                     dl->normal[2] = 0;
-                    dl->normal[0] = (float)cos(angle / 180 * Q_PI);
-                    dl->normal[1] = (float)sin(angle / 180 * Q_PI);
+                    dl->normal[0] = (float)cos(angle / 180 * M_PI);
+                    dl->normal[1] = (float)sin(angle / 180 * M_PI);
                 }
 
                 angle = FloatForKey(e, "pitch");
@@ -1116,9 +1116,9 @@ void            CreateDirectLights()
                     angle = vAngles[0];
                 }
 
-                dl->normal[2] = (float)sin(angle / 180 * Q_PI);
-                dl->normal[0] *= (float)cos(angle / 180 * Q_PI);
-                dl->normal[1] *= (float)cos(angle / 180 * Q_PI);
+                dl->normal[2] = (float)sin(angle / 180 * M_PI);
+                dl->normal[0] *= (float)cos(angle / 180 * M_PI);
+                dl->normal[1] *= (float)cos(angle / 180 * M_PI);
             }
 
             if (FloatForKey(e, "_sky") || !strcmp(name, "light_environment"))

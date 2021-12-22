@@ -2931,7 +2931,7 @@ int             main(const int argc, char** argv)
         Usage();
     }
 
-    g_smoothing_threshold = (float)cos(g_smoothing_value * (Q_PI / 180.0));
+    g_smoothing_threshold = (float)cos(g_smoothing_value * (M_PI / 180.0));
 
     safe_strncpy(g_Mapname, mapname_from_arg, _MAX_PATH);
     FlipSlashes(g_Mapname);

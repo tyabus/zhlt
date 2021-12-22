@@ -737,7 +737,7 @@ int             TexinfoForBrushTexture(const plane_t* const plane, brush_texture
             }
             else
             {
-                ang = bt->vects.valve.rotate / 180 * Q_PI;
+                ang = bt->vects.valve.rotate / 180 * M_PI;
                 sinv = sin(ang);
                 cosv = cos(ang);
             }
