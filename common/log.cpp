@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-#ifdef HAVE_UNISTD_H
+#ifdef SYSTEM_POSIX
 #include <unistd.h>
 #endif
 
@@ -45,34 +45,34 @@ void            ResetTmpFiles()
         char            filename[_MAX_PATH];
 
         safe_snprintf(filename, _MAX_PATH, "%s.bsp", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.inc", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.p0", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.p1", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.p2", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.p3", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.prt", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.pts", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.lin", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
 
         safe_snprintf(filename, _MAX_PATH, "%s.wic", g_Mapname);
-        _unlink(filename);
+        unlink(filename);
     }
 }
 
@@ -83,7 +83,7 @@ void            ResetLog()
         char            logfilename[_MAX_PATH];
 
         safe_snprintf(logfilename, _MAX_PATH, "%s.log", g_Mapname);
-        _unlink(logfilename);
+        unlink(logfilename);
     }
 }
 
@@ -94,7 +94,7 @@ void            ResetErrorLog()
         char            logfilename[_MAX_PATH];
 
         safe_snprintf(logfilename, _MAX_PATH, "%s.err", g_Mapname);
-        _unlink(logfilename);
+        unlink(logfilename);
     }
 }
 

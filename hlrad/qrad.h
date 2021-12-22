@@ -22,22 +22,16 @@
 #ifdef SYSTEM_WIN32
 #pragma warning(disable: 4142 4028)
 #include <io.h>
+#include <direct.h>
 #pragma warning(default: 4142 4028)
 #endif
 
-#ifdef HAVE_UNISTD_H
+#ifdef SYSTEM_POSIX
 #include <unistd.h>
-#endif
-
-#ifdef HAVE_FCNTL_H
 #include <fcntl.h>
 #endif
 
 #include <ctype.h>
-
-#ifdef SYSTEM_WIN32
-#include <direct.h>
-#endif
 
 #define DEFAULT_LERP_ENABLED        true
 #define DEFAULT_FADE                1.0

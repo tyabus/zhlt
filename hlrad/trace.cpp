@@ -66,8 +66,10 @@ void            MakeTnodes(dmodel_t* /*bm*/)
 
 #if SIZEOF_CHARP == 8
     tnodes = (tnode_t*)(((long long)tnodes + 31) & ~31);
-#else
+#elif SIZEOF_CHARP == 4
     tnodes = (tnode_t*)(((int)tnodes + 31) & ~31);
+#else
+    #error "SIZEOF_CHARP is undefined"
 #endif
     tnode_p = tnodes;
 

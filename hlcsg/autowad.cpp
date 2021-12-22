@@ -97,7 +97,7 @@ void        autowad_PushName(const char* const texname)
         // first texture, make an entry
         tex = (autowad_texname_t*)malloc(sizeof(autowad_texname_t));
         tex->next = NULL;
-        strcpy_s(tex->name, texname);
+        strcpy(tex->name, texname);
 
         g_autowad_texname = tex;
         g_numUsedTextures++;
@@ -123,7 +123,7 @@ void        autowad_PushName(const char* const texname)
     autowad_texname_t*  last;
     last = tex;
     tex = (autowad_texname_t*)malloc(sizeof(autowad_texname_t));
-    strcpy_s(tex->name, texname);
+    strcpy(tex->name, texname);
     tex->next = NULL;
     last->next = tex;
 

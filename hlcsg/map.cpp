@@ -212,7 +212,7 @@ static contents_t ParseBrush(entity_t* mapent)
 
         // read the     texturedef
         GetToken(false);
-        _strupr(g_token);
+        strupr(g_token);
 #ifdef HLCSG_NULLIFY_INVISIBLE
 		if(nullify && strncmp(g_token,"BEVEL",5) && strncmp(g_token,"ORIGIN",6))
 		{ safe_strncpy(g_token,"NULL",sizeof(g_token)); }

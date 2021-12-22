@@ -11,16 +11,9 @@
 #include "blockmem.h"
 
 #ifdef SYSTEM_POSIX
-#ifdef HAVE_SYS_TIME_H
 #include <sys/time.h>
-#endif
-#ifdef HAVE_SYS_RESOURCE_H
 #include <sys/resource.h>
 #include <pthread.h>
-#endif
-#ifdef HAVE_PTHREAD_H
-#include <pthread.h>
-#endif
 #endif
 
 #include "hlassert.h"

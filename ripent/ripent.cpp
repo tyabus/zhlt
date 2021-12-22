@@ -123,7 +123,7 @@ void ParseEntityData(const char *cTab, int iTabLength, const char *cNewLine, int
 				}
 				else
 				{
-					sprintf_s(cError, "expected token %s on line %d.", "{", iLine);
+					sprintf(cError, "expected token %s on line %d.", "{", iLine);
 					throw cError;
 				}
 			}
@@ -140,7 +140,7 @@ void ParseEntityData(const char *cTab, int iTabLength, const char *cNewLine, int
 					// Parse the start of a string.
 					if(!ScanForToken('\"', iIndex, iLine, false, false, &iStart))
 					{
-						sprintf_s(cError, "expected token %s on line %d.", "\"", iLine);
+						sprintf(cError, "expected token %s on line %d.", "\"", iLine);
 						throw cError;
 					}
 
@@ -148,7 +148,7 @@ void ParseEntityData(const char *cTab, int iTabLength, const char *cNewLine, int
 					// Parse the end of a string.
 					if(!ScanForToken('\"', iIndex, iLine, true, true, &iEnd))
 					{
-						sprintf_s(cError, "expected token %s on line %d.", "\"", iLine);
+						sprintf(cError, "expected token %s on line %d.", "\"", iLine);
 						throw cError;
 					}
 
@@ -172,7 +172,7 @@ void ParseEntityData(const char *cTab, int iTabLength, const char *cNewLine, int
 					}
 					else
 					{
-						sprintf_s(cError, "expected token %s on line %d.", "}", iLine);
+						sprintf(cError, "expected token %s on line %d.", "}", iLine);
 						throw cError;
 					}
 				}
@@ -389,7 +389,7 @@ static void     WriteEntities(const char* const name)
     safe_strncpy(filename, name, _MAX_PATH);
     StripExtension(filename);
     DefaultExtension(filename, ".ent");
-    _unlink(filename);
+    unlink(filename);
 
     {
 		if(g_parse)  // Added by Nem.

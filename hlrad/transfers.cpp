@@ -8,7 +8,7 @@
 #include "win32fix.h"
 #endif
 
-#ifdef HAVE_SYS_STAT_H
+#ifdef SYSTEM_POSIX
 #include <sys/stat.h>
 #endif
 
@@ -90,7 +90,7 @@ void            writetransfers(const char* const transferfile, const long total_
 
   FailedWrite:
     fclose(file);
-    _unlink(transferfile);
+    unlink(transferfile);
     Warning("Failed to generate incremental file [%s] (probably ran out of disk space)\n");
 }
 
@@ -197,6 +197,6 @@ bool            readtransfers(const char* const transferfile, const long numpatc
         }
     }
     fclose(file);
-    _unlink(transferfile);
+    unlink(transferfile);
     return false;
 }

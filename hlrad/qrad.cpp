@@ -151,7 +151,7 @@ void            GetParamsFromEnt(entity_t* mapent)
     {
         g_max_map_lightdata = iTmp;
     }
-    sprintf_s(szTmp, "%i", g_max_map_lightdata);
+    sprintf(szTmp, "%i", g_max_map_lightdata);
     Log("%30s [ %-9s ]\n", "Lighting Data Memory", szTmp);
 
     // verbose(choices) : "Verbose compile messages" : 0 = [ 0 : "Off" 1 : "On" ]
@@ -230,7 +230,7 @@ void            GetParamsFromEnt(entity_t* mapent)
     if (pszTmp)
     {
         float red = 0, green = 0, blue = 0;
-        if (sscanf_s(pszTmp, "%f %f %f", &red, &green, &blue))
+        if (sscanf(pszTmp, "%f %f %f", &red, &green, &blue))
         {
             if (red < 0 || red > 1 || green < 0 || green > 1 || blue < 0 || blue > 1)
             {
@@ -1219,7 +1219,7 @@ static void     MakePatches()
         {
             double          v1, v2, v3;
 
-            if (sscanf_s(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
+            if (sscanf(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
             {
                 origin[0] = v1;
                 origin[1] = v2;
@@ -1239,7 +1239,7 @@ static void     MakePatches()
                 {
                     double          v1, v2, v3;
 
-                    if (sscanf_s(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
+                    if (sscanf(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
                     {
                         light_origin[0] = v1;
                         light_origin[1] = v2;
@@ -1256,7 +1256,7 @@ static void     MakePatches()
         {
             double          v1, v2, v3;
 
-            if (sscanf_s(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
+            if (sscanf(s, "%lf %lf %lf", &v1, &v2, &v3) == 3)
             {
                 model_center[0] = v1;
                 model_center[1] = v2;
@@ -1274,7 +1274,7 @@ static void     MakePatches()
         if (*(s = ValueForKey(ent, "zhlt_customshadow")))
         {
         	double r1 = 1.0, g1 = 1.0, b1 = 1.0, tmp = 1.0;
-        	if (sscanf_s(s, "%lf %lf %lf", &r1, &g1, &b1) == 3) //RGB version
+        	if (sscanf(s, "%lf %lf %lf", &r1, &g1, &b1) == 3) //RGB version
         	{
         		if(r1<0.0) r1 = 0.0;
         		if(g1<0.0) g1 = 0.0;
@@ -1285,7 +1285,7 @@ static void     MakePatches()
         		d_transparency[2] = b1;
         		b_transparency = true;
         	}
-        	else if (sscanf_s(s, "%lf", &tmp) == 1) //Greyscale version
+        	else if (sscanf(s, "%lf", &tmp) == 1) //Greyscale version
         	{
         		if(tmp<0.0) tmp = 0.0;
         		
@@ -1799,7 +1799,7 @@ static void     BounceLight()
 
         if (g_dumppatches)
         {
-            sprintf_s(name, "bounce%u.txt", i);
+            sprintf(name, "bounce%u.txt", i);
             WriteWorld(name);
         }
     }
@@ -2225,7 +2225,7 @@ void            ReadInfoTexlights()
                )
                 continue; // we dont care about these keyvalues
 
-            values = sscanf_s(ep->value, "%f %f %f %f", &r, &g, &b, &i);
+            values = sscanf(ep->value, "%f %f %f %f", &r, &g, &b, &i);
             
             if (values == 1)
             {  
@@ -2955,7 +2955,7 @@ int             main(const int argc, char** argv)
     if (g_maxlight > 255)
         g_maxlight = 255;
 
-    strcpy_s(g_source, mapname_from_arg);
+    strcpy(g_source, mapname_from_arg);
     StripExtension(g_source);
     DefaultExtension(g_source, ".bsp");
     LoadBSPFile(g_source);

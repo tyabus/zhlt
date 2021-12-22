@@ -10,15 +10,9 @@
 #include "log.h"
 
 #ifdef SYSTEM_POSIX
-#ifdef HAVE_SYS_STAT_H
 #include <sys/stat.h>
-#endif
-#ifdef HAVE_FCNTL_H
 #include <fcntl.h>
-#endif
-#ifdef HAVE_UNISTD_H
 #include <unistd.h>
-#endif
 #endif
 
 #include <algorithm>
@@ -95,11 +89,11 @@ const char*     stristr(const char* const string, const char* const substring)
     char*           substring_copy;
     const char*     match;
 
-    string_copy = _strdup(string);
-    _strlwr(string_copy);
+    string_copy = strdup(string);
+    strlwr(string_copy);
 
-    substring_copy = _strdup(substring);
-    _strlwr(substring_copy);
+    substring_copy = strdup(substring);
+    strlwr(substring_copy);
 
     match = strstr(string_copy, substring_copy);
     if (match)

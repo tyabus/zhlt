@@ -780,7 +780,7 @@ static void InitVisBlock(void)
 	int num_blocks;
 	int num_sides;
 
-	strcpy_s(visfile, g_Mapname);
+	strcpy(visfile, g_Mapname);
 	DefaultExtension(visfile, ".vis");
 
 	if(!q_exists(visfile))
@@ -793,22 +793,22 @@ static void InitVisBlock(void)
 
 	while(!feof(fp))
 	{
-		fscanf_s(fp, "%s\n", g_visblockers[x].name);
+		fscanf(fp, "%s\n", g_visblockers[x].name);
 
-		fscanf_s(fp, "%d\n", &num_blocks);
+		fscanf(fp, "%d\n", &num_blocks);
 		
 		for(i = 0; i < num_blocks; i++)
 		{
-			fscanf_s(fp, "%s\n", g_visblockers[x].blocknames[i]);
+			fscanf(fp, "%s\n", g_visblockers[x].blocknames[i]);
 		}
 
 		g_visblockers[x].numnames = num_blocks;
 
-		fscanf_s(fp, "%d\n", &num_sides);
+		fscanf(fp, "%d\n", &num_sides);
 
 		for(i = 0; i < num_sides; i++)
 		{
-			fscanf_s(fp, "%f %f %f %f\n", &g_visblockers[x].planes[i].normal[0],
+			fscanf(fp, "%f %f %f %f\n", &g_visblockers[x].planes[i].normal[0],
 										&g_visblockers[x].planes[i].normal[1],
 										&g_visblockers[x].planes[i].normal[2],
 										&g_visblockers[x].planes[i].dist);
@@ -920,11 +920,11 @@ static void     CalcVis()
     unsigned        i;
 	char visdatafile[_MAX_PATH];
 
-	strcpy_s(visdatafile, g_Mapname);
+	strcpy(visdatafile, g_Mapname);
 	DefaultExtension(visdatafile, ".vdt");
 
 	// Remove this file
-	_unlink(visdatafile);
+	unlink(visdatafile);
 
 /*    if(g_postcompile)
 	{
@@ -1029,14 +1029,14 @@ static void     LoadPortals(char* portal_image)
 
     token = strtok(portal_image, seperators);
     CheckNullToken(token);
-    if (!sscanf_s(token, "%u", &g_portalleafs))
+    if (!sscanf(token, "%u", &g_portalleafs))
     {
         Error("LoadPortals: failed to read header: number of leafs");
     }
 
     token = strtok(NULL, seperators);
     CheckNullToken(token);
-    if (!sscanf_s(token, "%i", &g_numportals))
+    if (!sscanf(token, "%i", &g_numportals))
     {
         Error("LoadPortals: failed to read header: number of portals");
     }
@@ -1062,13 +1062,13 @@ static void     LoadPortals(char* portal_image)
 
         token = strtok(NULL, seperators);
         CheckNullToken(token);
-        rval += sscanf_s(token, "%i", &numpoints);
+        rval += sscanf(token, "%i", &numpoints);
         token = strtok(NULL, seperators);
         CheckNullToken(token);
-        rval += sscanf_s(token, "%i", &leafnums[0]);
+        rval += sscanf(token, "%i", &leafnums[0]);
         token = strtok(NULL, seperators);
         CheckNullToken(token);
-        rval += sscanf_s(token, "%i", &leafnums[1]);
+        rval += sscanf(token, "%i", &leafnums[1]);
 
         if (rval != 3)
         {
@@ -1095,13 +1095,13 @@ static void     LoadPortals(char* portal_image)
 
             token = strtok(NULL, seperators);
             CheckNullToken(token);
-            rval += sscanf_s(token, "%lf", &v[0]);
+            rval += sscanf(token, "%lf", &v[0]);
             token = strtok(NULL, seperators);
             CheckNullToken(token);
-            rval += sscanf_s(token, "%lf", &v[1]);
+            rval += sscanf(token, "%lf", &v[1]);
             token = strtok(NULL, seperators);
             CheckNullToken(token);
-            rval += sscanf_s(token, "%lf", &v[2]);
+            rval += sscanf(token, "%lf", &v[2]);
 
             // scanf into double, then assign to vec_t
             if (rval != 3)

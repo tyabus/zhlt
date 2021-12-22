@@ -997,7 +997,7 @@ void            CreateDirectLights()
         pLight = ValueForKey(e, "_light");
         // scanf into doubles, then assign, so it is vec_t size independent
         r = g = b = scaler = 0;
-        argCnt = sscanf_s(pLight, "%lf %lf %lf %lf", &r, &g, &b, &scaler);
+        argCnt = sscanf(pLight, "%lf %lf %lf %lf", &r, &g, &b, &scaler);
         dl->intensity[0] = (float)r;
         if (argCnt == 1)
         {
@@ -1133,7 +1133,7 @@ void            CreateDirectLights()
 #ifdef HLRAD_WHOME
 				pLight = ValueForKey(e, "_diffuse_light");
         		r = g = b = scaler = 0;
-        		argCnt = sscanf_s(pLight, "%lf %lf %lf %lf", &r, &g, &b, &scaler);
+        		argCnt = sscanf(pLight, "%lf %lf %lf %lf", &r, &g, &b, &scaler);
         		dl->diffuse_intensity[0] = (float)r;
         		if (argCnt == 1)
         		{

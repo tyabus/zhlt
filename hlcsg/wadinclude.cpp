@@ -56,12 +56,12 @@ void            SaveWadincludeFile(const char* const filename)
     fname = (char*)Alloc(len);
     safe_snprintf(fname, len, "%s.wic", filename);
 
-    _unlink(fname);
+    unlink(fname);
 
     file = SafeOpenWrite(fname);
 
     WadInclude_i it;
-    for (it = g_WadInclude.begin(); it != g_WadInclude.end(); it++)
+     for (it = g_WadInclude.begin(); it != g_WadInclude.end(); it++)
     {
         x = it->size();
         if (x)

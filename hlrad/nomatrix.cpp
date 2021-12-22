@@ -117,7 +117,7 @@ void            MakeScalesNoVismatrix()
         }
         else
         {
-            _unlink(transferfile);
+            unlink(transferfile);
         }
         DumpTransfersMemoryUsage();
     }

@@ -183,7 +183,7 @@ bool        GetWadConfig(FILE* wadcfg, wadconfig_t* wadconfig)
             Safe_GetToken(wadcfg, TokenBuffer, MAX_TOKENBUFFER);
         }
         
-        strcpy_s(current->wadname, TokenBuffer);
+        strcpy(current->wadname, TokenBuffer);
         
         if (!wadconfig->firstentry)
         {

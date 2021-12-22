@@ -58,8 +58,6 @@
 #define HLCSG_NULLIFY_INVISIBLE // requires null textures as prerequisite
 #endif
 
-//#define HLBSP_THREADS // estimate for hlbsp
-
 #define HLVIS_MAXDIST
 
 #define HLRAD_INFO_TEXLIGHTS
@@ -88,10 +86,8 @@
 #include <stdarg.h>
 #include <limits.h>
 
-#ifdef HAVE_SYS_TIME_H
+#ifdef SYSTEM_POSIX
 #include <sys/time.h>
-#endif
-#ifdef HAVE_UNISTD_H
 #include <unistd.h>
 #endif
 

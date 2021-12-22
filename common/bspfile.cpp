@@ -609,13 +609,13 @@ epair_t*        ParseEpair()
     if (strlen(g_token) >= MAX_KEY - 1)
         Error("ParseEpair: Key token too long (%i > MAX_KEY)", (int)strlen(g_token));
 
-    e->key = _strdup(g_token);
+    e->key = strdup(g_token);
     GetToken(false);
 
     if (strlen(g_token) >= ZHLT3_MAX_VALUE - 1)
         Error("ParseEpar: Value token too long (%i > ZHLT3_MAX_VALUE)", (int)strlen(g_token));
 
-    e->value = _strdup(g_token);
+    e->value = strdup(g_token);
 
     return e;
 }
