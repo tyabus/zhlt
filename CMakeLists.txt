@@ -29,12 +29,12 @@ endif()
 option(STATIC "Build statically" OFF)
 
 if(STATIC)
-	SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-static")
+	SET(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-static")
 endif()
 
 if(NOT MSVC)
-	set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG} "-g -ggdb -O0")
-	set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE} "-O3 -ffast-math -funsafe-math-optimizations -funsafe-loop-optimizations")
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -ggdb -O0")
+	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -funsafe-math-optimizations -funsafe-loop-optimizations")
 endif()
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
