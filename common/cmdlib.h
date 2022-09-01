@@ -17,7 +17,6 @@
 #endif // #ifndef alloca
 #endif
 
-#include "win32fix.h"
 #include "mathtypes.h"
 
 #define MODIFICATIONS_STRING "Modified by tyabus\n"
@@ -85,6 +84,8 @@
 #include <time.h>
 #include <stdarg.h>
 #include <limits.h>
+
+#include "win32fix.h"
 
 #ifdef SYSTEM_POSIX
 #include <sys/time.h>

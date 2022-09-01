@@ -155,6 +155,12 @@ inline unsigned int rotr(unsigned value, unsigned int amt)
 #endif
 
 
+#ifdef _MSC_VER
+#ifndef finite
+#define finite    _finite
+#endif
+#endif
+
 //
 // Misc
 //

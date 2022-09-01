@@ -102,6 +102,26 @@ unsigned long   g_bsp_size = 0;             // Server variable
 unsigned long   g_prt_size = 0;             // Server variable
 #endif
 
+#define PATHSEPARATOR(c) ((c) == '\\' || (c) == '/')
+
+void            ExtractFile(const char* const path, char* dest)
+{
+    hlassert(path != dest);
+
+    const char* src;
+
+    src = path + strlen(path) - 1;
+
+    while (src != path && !PATHSEPARATOR(*(src - 1)))
+        src--;
+
+    while (*src)
+    {
+        *dest++ = *src++;
+    }
+    *dest = 0;
+}
+
 #ifdef ZHLT_INFO_COMPILE_PARAMETERS
 // AJM: addded in
 // =====================================================================================

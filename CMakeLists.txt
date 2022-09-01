@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0.0)
 project(ZHLT)
 
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
+	set(CMAKE_BUILD_TYPE "Release")
 endif()
 
 # Set the possible values of build type for cmake-gui
@@ -18,6 +18,16 @@ if(WIN32)
 	add_definitions(-DSYSTEM_WIN32)
 else()
 	add_definitions(-DSYSTEM_POSIX)
+endif()
+
+# Non optimization MSVC-only stuff
+if(MSVC)
+	add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -DNOMINMAX)
+	# @ssrobins at gitlab.kitware.com
+    add_compile_options(
+        $<$<CONFIG:>:/MT> #---------|
+        $<$<CONFIG:Debug>:/MTd> #---|-- Statically link the runtime libraries
+        $<$<CONFIG:Release>:/MT>) #--|
 endif()
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
