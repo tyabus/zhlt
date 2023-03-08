@@ -10,7 +10,12 @@
 
 #include "log.h"
 
+#ifdef _WIN64
+#define assume(exp, message) {if (!(exp)) {Log("\n***** ERROR *****\nAssume '%s' failed\n at %s:%d\n %s\n\n", #exp, __FILE__, __LINE__, message);  __debugbreak(); }}
+#else
 #define assume(exp, message) {if (!(exp)) {Log("\n***** ERROR *****\nAssume '%s' failed\n at %s:%d\n %s\n\n", #exp, __FILE__, __LINE__, message);  __asm{int 3} }}
+#endif
+
 #define hlassert(exp) assume(exp, "")
 
 #else // _DEBUG
