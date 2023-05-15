@@ -595,13 +595,13 @@ int             main(int argc, char** argv)
 
     if (g_mode == hl_undefined)
     {
-        fprintf(stderr, "%s", "Must specify either -import or -export\n");
+        fprintf(stderr, "%s: Must specify either -import or -export\n", g_Program);
         Usage();
     }
 
     if (!q_exists(g_Mapname))
     {
-        fprintf(stderr, "%s", "bspfile '%s' does not exist\n", g_Mapname);
+        fprintf(stderr, "%s: bspfile '%s' does not exist\n", g_Program, g_Mapname);
         Usage();
     }
 

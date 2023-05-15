@@ -205,7 +205,7 @@ void ExtractFile(char* const path, char* dest)
 	int extension_pos, directory_pos;
 	getFilePositions(path,&extension_pos,&directory_pos);
 
-	int length = strlen(path);
+	size_t length = strlen(path);
 
 	if(directory_pos == -1)	{ directory_pos = 0; }
 	else { length -= directory_pos + 1; }
@@ -218,7 +218,7 @@ void ExtractFileBase(char* const path, char* dest)
 {
 	int extension_pos, directory_pos;
 	getFilePositions(path,&extension_pos,&directory_pos);
-	int length = extension_pos == -1 ? strlen(path) : extension_pos;
+	size_t length = extension_pos == -1 ? strlen(path) : extension_pos;
 
 	if(directory_pos == -1)	{ directory_pos = 0; }
 	else { length -= directory_pos + 1; }
@@ -233,7 +233,7 @@ void ExtractFileExtension(char* const path, char* dest)
 	getFilePositions(path,&extension_pos,&directory_pos);
 	if(extension_pos != -1)
 	{
-		int length = strlen(path) - extension_pos;
+		size_t length = strlen(path) - extension_pos;
 	    memcpy(dest,path+extension_pos,length); //include extension '.'
 	    dest[length] = 0;
 	}
