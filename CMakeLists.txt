@@ -7,13 +7,12 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the possible values of build type for cmake-gui
-set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
+#set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
 
 if(NOT WIN32)
 	find_package(Threads REQUIRED)
 endif()
 
-# Windows wasnt tested
 if(WIN32)
 	add_definitions(-DSYSTEM_WIN32)
 else()
@@ -22,6 +21,7 @@ endif()
 
 # Non optimization MSVC-only stuff
 if(MSVC)
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /LARGEADDRESSAWARE") # Use more than 2 gigabytes of memory on windows on 32 bit
 	add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -DNOMINMAX)
 	# @ssrobins at gitlab.kitware.com
     add_compile_options(
